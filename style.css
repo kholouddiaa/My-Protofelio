@@ -77,8 +77,14 @@ body::after {
   color: #00f5d4;
 }
 
-nav a {
-  margin: 0 12px;
+/* Navbar links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links a {
   text-decoration: none;
   color: white;
   font-weight: 500;
@@ -86,9 +92,63 @@ nav a {
   transition: 0.3s;
 }
 
-nav a:hover {
+.nav-links a:hover {
   opacity: 1;
   color: #00f5d4;
+}
+
+/* =========================
+   BURGER MENU
+========================= */
+.menu-container {
+  position: relative;
+}
+
+.burger {
+  font-size: 28px;
+  cursor: pointer;
+  color: #00f5d4;
+  padding: 6px 12px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.burger:hover {
+  background: rgba(0, 245, 212, 0.15);
+}
+
+.dropdown {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  width: 200px;
+  background: rgba(11, 15, 25, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 15px;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  z-index: 2000;
+}
+
+.dropdown a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  opacity: 0.85;
+  transition: 0.3s;
+}
+
+.dropdown a:hover {
+  color: #00f5d4;
+  opacity: 1;
+}
+
+.dropdown.show {
+  display: flex;
 }
 
 /* =========================
@@ -125,6 +185,18 @@ nav a:hover {
   color: black;
 }
 
+/* CV Button */
+.btn-cv {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
+}
+
+.btn-cv:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(118, 75, 162, 0.6);
+}
+
 /* =========================
    SECTIONS
 ========================= */
@@ -136,6 +208,7 @@ nav a:hover {
   font-size: 32px;
   margin-bottom: 30px;
   color: #00f5d4;
+  text-shadow: 0 0 12px rgba(0, 245, 212, 0.4);
 }
 
 /* =========================
@@ -162,7 +235,6 @@ nav a:hover {
   overflow: hidden;
 }
 
-/* Image */
 .profile-image {
   position: absolute;
   left: 0;
@@ -175,7 +247,6 @@ nav a:hover {
   object-fit: contain;
 }
 
-/* Content */
 .profile-content {
   margin-left: 280px;
   margin-right: 60px;
@@ -205,6 +276,7 @@ nav a:hover {
   margin-top: 25px;
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .stats {
@@ -222,7 +294,6 @@ nav a:hover {
   align-items: flex-start;
   gap: 50px;
   flex-wrap: nowrap;
-
 }
 
 .about p {
@@ -236,12 +307,12 @@ nav a:hover {
 .about-box {
   flex: 1;
   max-width: 420px;
-
   background: rgba(255, 255, 255, 0.05);
   padding: 25px;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
+
 /* =========================
    SKILLS
 ========================= */
@@ -349,6 +420,75 @@ nav a:hover {
 }
 
 /* =========================
+   EXPERIENCE
+========================= */
+.experience-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 26px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.experience-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 245, 212, 0.25);
+}
+
+.experience-box h3 {
+  color: #00f5d4;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   EDUCATION
+========================= */
+.education-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 26px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.3s;
+}
+
+.education-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 187, 249, 0.25);
+}
+
+.education-box h3 {
+  color: #00f5d4;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   CERTIFICATES
+========================= */
+.certificates {
+  text-align: left;
+}
+
+.cert-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 18px;
+  transition: 0.3s;
+}
+
+.cert-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(118, 75, 162, 0.35);
+}
+
+.cert-box h3 {
+  color: #00f5d4;
+  margin-bottom: 6px;
+}
+
+/* =========================
    CONTACT
 ========================= */
 .contact-box {
@@ -356,6 +496,25 @@ nav a:hover {
   padding: 34px;
   border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-icons {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.contact-icons a {
+  font-size: 40px;
+  color: #00f5d4;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.contact-icons a:hover {
+  transform: scale(1.15);
+  color: #00bbf9;
 }
 
 /* =========================
@@ -367,38 +526,44 @@ nav a:hover {
   opacity: 0.6;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
-.contact-icons {
-  margin-top: 25px;
-  display: flex;
-  gap: 20px;
-  /* مسافة بين الأيقونات */
-  align-items: center;
+
+/* =========================
+   REVEAL ANIMATION
+========================= */
+.skill-card,
+.project-card,
+.about-box,
+.experience-box,
+.education-box,
+.cert-box {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
 
-.contact-icons a {
-  font-size: 40px;
-  /* حجم الأيقونات */
-  color: #00f5d4;
-  transition: 0.3s ease;
-  text-decoration: none;
+.skill-card.active,
+.project-card.active,
+.about-box.active,
+.experience-box.active,
+.education-box.active,
+.cert-box.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.contact-icons a:hover {
-  transform: scale(1.15);
-  color: #00bbf9;
-}
 /* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 900px) {
 
-  nav {
+  .nav-links {
     display: none;
   }
 
   .profile-card {
     flex-direction: column;
     text-align: center;
+    padding: 40px 25px;
   }
 
   .profile-image {
@@ -418,16 +583,6 @@ nav a:hover {
     flex-wrap: wrap;
   }
 
-  .project-links {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .project-btn {
-    justify-content: center;
-  }
-
-  /* About Section Mobile Fix */
   .about {
     flex-direction: column;
   }

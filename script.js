@@ -1,19 +1,41 @@
-// Smooth reveal animation on scroll
-const cards = document.querySelectorAll(".skill-card, .project-card, .about-box, .hero-card");
+/* =========================
+   BURGER MENU
+========================= */
+const burger = document.getElementById("burger");
+const dropdown = document.getElementById("dropdown");
 
-window.addEventListener("scroll", () => {
-  cards.forEach(card => {
-    const rect = card.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 80) {
-      card.style.opacity = "1";
-      card.style.transform = "translateY(0)";
-    }
+burger.addEventListener("click", () => {
+  dropdown.classList.toggle("show");
+});
+
+// Close menu when clicking link
+document.querySelectorAll("#dropdown a").forEach(link => {
+  link.addEventListener("click", () => {
+    dropdown.classList.remove("show");
   });
 });
 
-// Initial state
-cards.forEach(card => {
-  card.style.opacity = "0";
-  card.style.transform = "translateY(40px)";
-  card.style.transition = "0.8s ease";
+
+/* =========================
+   SMOOTH REVEAL ANIMATION
+========================= */
+const revealElements = document.querySelectorAll(
+  ".skill-card, .project-card, .about-box, .experience-box, .education-box, .cert-box"
+);
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  },
+  {
+    threshold: 0.15
+  }
+);
+
+revealElements.forEach(el => {
+  observer.observe(el);
 });

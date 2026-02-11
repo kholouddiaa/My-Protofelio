@@ -4,32 +4,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kholoud Diaa | Fullstack Developer</title>
+  <title>Kholoud Diaa | Portfolio</title>
 
+  <!-- CSS File -->
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
 
-  <!-- Navbar -->
-  <header class="navbar">
-    <h2 class="logo">Kholoud Diaa <span>.</span></h2>
-
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+  <header class="header">
+    <nav class="navbar">
+  
+      <h2 class="logo">Khlood<span>.</span></h2>
+  
+      <!-- Main Links -->
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+  
+      <!-- Burger Menu -->
+      <div class="menu-container">
+        <div class="burger" id="burger">
+          ☰
+        </div>
+  
+        <div class="dropdown" id="dropdown">
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#certificates">Certificates</a>
+        </div>
+      </div>
+  
     </nav>
-
-    <a class="btn" href="#contact">Hire Me</a>
   </header>
 
-  <!-- Hero Section -->
+
+
+  <!-- =========================
+       HERO SECTION
+  ========================= -->
   <section class="profile-section" id="home">
     <div class="profile-card">
 
@@ -49,6 +72,10 @@
         <div class="profile-buttons">
           <a href="#projects" class="btn">View Projects</a>
           <a href="#contact" class="btn-outline">Contact</a>
+
+          <a href="assets/CV.pdf" download class="btn btn-cv">
+            Download CV
+          </a>
         </div>
 
         <div class="stats">
@@ -71,18 +98,21 @@
     </div>
   </section>
 
-  <!-- About -->
+
+  <!-- =========================
+       ABOUT SECTION
+  ========================= -->
   <section class="section" id="about">
     <h2 class="section-title">About Me</h2>
 
     <div class="about">
       <p>
-I’m a Full-Stack Developer specialized in building scalable web applications with ASP.NET Core, REST APIs, and SQL
-Server. <b>ASP.NET Core</b>, <b>REST APIs</b>, and <b>SQL Server</b>.
-    I help businesses turn their ideas into powerful digital solutions by designing secure backend architectures and
-    integrating them with clean, responsive user interfaces.
-    
-    I don’t just write code — I build systems that grow with your business.
+        I’m a Full-Stack Developer specialized in building scalable web applications with ASP.NET Core,
+        REST APIs, and SQL Server.
+        I help businesses turn their ideas into powerful digital solutions by designing secure backend architectures and
+        integrating them with clean, responsive user interfaces.
+        <br><br>
+        I don’t just write code — I build systems that grow with your business.
       </p>
 
       <div class="about-box">
@@ -97,7 +127,10 @@ Server. <b>ASP.NET Core</b>, <b>REST APIs</b>, and <b>SQL Server</b>.
     </div>
   </section>
 
-  <!-- Skills -->
+
+  <!-- =========================
+       SKILLS SECTION
+  ========================= -->
   <section class="section" id="skills">
     <h2 class="section-title">Skills</h2>
 
@@ -124,13 +157,15 @@ Server. <b>ASP.NET Core</b>, <b>REST APIs</b>, and <b>SQL Server</b>.
     </div>
   </section>
 
-  <!-- Projects -->
+
+  <!-- =========================
+       PROJECTS SECTION
+  ========================= -->
   <section class="section" id="projects">
     <h2 class="section-title">Projects</h2>
 
     <div class="projects-grid">
 
-      <!-- Project 1 -->
       <div class="project-card">
         <h3>Event Booking System</h3>
         <p>ASP.NET MVC project with authentication, CRUD events, and booking workflow.</p>
@@ -145,17 +180,9 @@ Server. <b>ASP.NET Core</b>, <b>REST APIs</b>, and <b>SQL Server</b>.
           <a href="https://github.com/kholouddiaa/MVC-Event" target="_blank" class="project-btn github">
             <i class="fa-brands fa-github"></i> GitHub
           </a>
-
-          <!-- لو عندك Demo افتحيه -->
-          <!--
-          <a href="https://kholouddiaa.github.io/Event-Booking-System/" target="_blank" class="project-btn demo">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-          </a>
-          -->
         </div>
       </div>
 
-      <!-- Project 2 -->
       <div class="project-card">
         <h3>Weather Mood App</h3>
         <p>Weather application with API integration and dynamic background changes.</p>
@@ -177,7 +204,6 @@ Server. <b>ASP.NET Core</b>, <b>REST APIs</b>, and <b>SQL Server</b>.
         </div>
       </div>
 
-      <!-- Project 3 -->
       <div class="project-card">
         <h3>Currency Converter</h3>
         <p>JavaScript app that converts currencies with clean UI and smooth UX.</p>
@@ -199,7 +225,6 @@ Server. <b>ASP.NET Core</b>, <b>REST APIs</b>, and <b>SQL Server</b>.
         </div>
       </div>
 
-      <!-- Project 4 -->
       <div class="project-card">
         <h3>Real-time Character Counter</h3>
         <p>Real-time text counter tool with responsive modern UI design.</p>
@@ -222,7 +247,6 @@ Server. <b>ASP.NET Core</b>, <b>REST APIs</b>, and <b>SQL Server</b>.
         </div>
       </div>
 
-      <!-- Project 5 -->
       <div class="project-card">
         <h3>Area Circle Calculator</h3>
         <p>Simple JavaScript calculator to compute the area of a circle with interactive UI.</p>
@@ -245,7 +269,6 @@ Server. <b>ASP.NET Core</b>, <b>REST APIs</b>, and <b>SQL Server</b>.
         </div>
       </div>
 
-      <!-- Project 6 -->
       <div class="project-card">
         <h3>Portfolio Website</h3>
         <p>Personal portfolio website built with modern UI design and smooth animations.</p>
@@ -269,7 +292,73 @@ Server. <b>ASP.NET Core</b>, <b>REST APIs</b>, and <b>SQL Server</b>.
     </div>
   </section>
 
-  <!-- Contact -->
+
+  <!-- =========================
+         EDUCATION SECTION
+    ========================= -->
+  <section class="section education" id="education">
+    <h2 class="section-title">Education</h2>
+  
+    <div class="education-box">
+      <h3>Bachelor Degree - Computer Science</h3>
+      <p><strong>University:</strong> Faculty of Electronic Engineering in Menouf</p>
+      <p><strong>Graduation Year:</strong> 2026</p>
+  
+      <p> <strong> Degree:</strong> Very Good </p>
+  
+    </div>
+  </section>
+  <!-- =========================
+       EXPERIENCE SECTION
+  ========================= -->
+  <section class="section experience" id="experience">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="experience-box">
+      <h3>Full Stack Developer Intern</h3>
+      <p><strong>Company:</strong> RiSKRiCE </p>
+      <p>
+        Worked on building backend APIs, database integration, and creating responsive UI.
+      </p>
+    </div>
+
+    <div class="experience-box">
+      <h3>Freelance Projects</h3>
+      <p>
+        Developed multiple websites and applications using .NET, SQL Server, and JavaScript.
+      </p>
+    </div>
+  </section>
+
+
+
+
+  <!-- =========================
+       CERTIFICATES SECTION
+  ========================= -->
+  <section class="section certificates" id="certificates">
+    <h2 class="section-title">Certificates</h2>
+
+
+    <div class="cert-box">
+      <h3>.NET Development Certificate</h3>
+      <p>Issued by: ITI Menoufia </p>
+    </div>
+
+    <div class="cert-box">
+      <h3>JavaScript Development Certificate</h3>
+      <p>Issued by: IBM SkillsBuild </p>
+    </div>
+      <div class="cert-box">
+        <h3>HTML-CSS Certificate</h3>
+        <p>Issued by: IBM SkillsBuild </p>
+  </section>
+  
+
+
+  <!-- =========================
+       CONTACT SECTION
+  ========================= -->
   <section class="section contact" id="contact">
     <h2 class="section-title">Contact Me</h2>
 
@@ -296,19 +385,23 @@ Server. <b>ASP.NET Core</b>, <b>REST APIs</b>, and <b>SQL Server</b>.
       </div>
 
       <a class="btn" href="https://mail.google.com/mail/?view=cm&to=kholouddiaaelbaz@gmail.com" target="_blank">
-        Send Email
-        <i class="fa-solid fa-envelope"></i>
+        Send Email <i class="fa-solid fa-envelope"></i>
       </a>
-
     </div>
   </section>
 
-  <!-- Footer -->
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
   <footer class="footer">
     <p>© 2026 Kholoud Diaa | Fullstack Developer</p>
   </footer>
 
+
+  <!-- JavaScript File -->
   <script src="script.js"></script>
+
 </body>
 
 </html>
