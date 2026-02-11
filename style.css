@@ -218,19 +218,30 @@ nav a:hover {
 ========================= */
 .about {
   display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  flex-wrap: nowrap;
+
+}
+
+.about p {
+  flex: 1;
+  max-width: 600px;
+  line-height: 1.8;
+  opacity: 0.8;
+  font-size: 16px;
 }
 
 .about-box {
   flex: 1;
-  min-width: 260px;
+  max-width: 420px;
+
   background: rgba(255, 255, 255, 0.05);
-  padding: 22px;
+  padding: 25px;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
-
 /* =========================
    SKILLS
 ========================= */
@@ -356,7 +367,26 @@ nav a:hover {
   opacity: 0.6;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
+.contact-icons {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+  /* مسافة بين الأيقونات */
+  align-items: center;
+}
 
+.contact-icons a {
+  font-size: 40px;
+  /* حجم الأيقونات */
+  color: #00f5d4;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.contact-icons a:hover {
+  transform: scale(1.15);
+  color: #00bbf9;
+}
 /* =========================
    RESPONSIVE
 ========================= */
@@ -395,5 +425,14 @@ nav a:hover {
 
   .project-btn {
     justify-content: center;
+  }
+
+  /* About Section Mobile Fix */
+  .about {
+    flex-direction: column;
+  }
+
+  .about-box {
+    max-width: 100%;
   }
 }
