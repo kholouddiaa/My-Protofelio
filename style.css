@@ -1,0 +1,481 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0b0f19;
+  color: white;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* =========================
+   FIX NAVBAR SCROLL OFFSET
+========================= */
+section {
+  scroll-margin-top: 140px;
+}
+
+/* =========================
+   BACKGROUND GLOW
+========================= */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 520px;
+  height: 520px;
+  filter: blur(140px);
+  z-index: -1;
+}
+
+body::before {
+  top: -200px;
+  left: -200px;
+  background: rgba(0, 245, 212, 0.18);
+}
+
+body::after {
+  bottom: -200px;
+  right: -200px;
+  background: rgba(0, 187, 249, 0.18);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(11, 15, 25, 0.7);
+  backdrop-filter: blur(15px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.logo span {
+  color: #00f5d4;
+}
+
+nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  opacity: 1;
+  color: #00f5d4;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+  background: linear-gradient(135deg, #00f5d4, #00bbf9);
+  color: black;
+  padding: 10px 22px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 245, 212, 0.35);
+}
+
+.btn-outline {
+  border: 2px solid #00f5d4;
+  padding: 10px 22px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: #00f5d4;
+  color: black;
+}
+
+.btn i {
+  margin-left: 8px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section {
+  padding: 110px 10% 80px;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #00f5d4;
+}
+
+/* =========================
+   HERO PROFILE SECTION
+========================= */
+.profile-section {
+  padding: 160px 10% 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-card {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 55px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 30px 70px rgba(0, 245, 212, 0.14);
+  transition: 0.4s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 40px 90px rgba(0, 245, 212, 0.22);
+}
+
+/* Profile Image */
+.profile-image {
+  position: absolute;
+  left: -70px;
+  bottom: -35px;
+  width: 340px;
+  z-index: 2;
+}
+
+.profile-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+  filter: drop-shadow(0 22px 38px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 20px 46px rgba(0, 245, 212, 0.35));
+  transform: translateY(6px) scale(1.03);
+}
+
+/* Profile Content */
+.profile-content {
+  margin-left: 260px;
+}
+
+.profile-content h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #00f5d4;
+}
+
+.profile-content h4 {
+  margin-top: 10px;
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+.profile-content p {
+  margin-top: 18px;
+  line-height: 1.8;
+  opacity: 0.75;
+  font-size: 15px;
+  max-width: 560px;
+}
+
+.profile-buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 34px;
+  margin-top: 28px;
+}
+
+.stats h4 {
+  font-size: 22px;
+  color: #00f5d4;
+}
+
+.stats p {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* =========================
+   ABOUT
+========================= */
+.about {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about p {
+  flex: 1;
+  max-width: 560px;
+  line-height: 1.8;
+  opacity: 0.8;
+  font-size: 16px;
+}
+
+.about-box {
+  flex: 1;
+  min-width: 260px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 22px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-box h3 {
+  margin-bottom: 12px;
+  color: #00f5d4;
+}
+
+.about-box ul {
+  list-style: none;
+}
+
+.about-box li {
+  margin: 10px 0;
+  opacity: 0.85;
+}
+
+/* =========================
+   SKILLS
+========================= */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.35s;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 35px rgba(0, 245, 212, 0.25);
+}
+
+.skill-card h3 {
+  color: #00f5d4;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  opacity: 0.75;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.35s;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 40px rgba(0, 245, 212, 0.25);
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+  color: #00f5d4;
+}
+
+.project-card p {
+  opacity: 0.75;
+  line-height: 1.6;
+}
+
+.tags {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags span {
+  background: rgba(0, 245, 212, 0.15);
+  padding: 6px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+  color: #00f5d4;
+}
+
+.project-links {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-links a {
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.project-links a:hover {
+  opacity: 1;
+  color: #00f5d4;
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 34px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-box p {
+  opacity: 0.8;
+  font-size: 16px;
+}
+
+/* Icons */
+.contact-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.contact-icons a {
+  position: relative;
+  font-size: 42px;
+  color: #00f5d4;
+  transition: 0.3s ease;
+}
+
+.contact-icons a:hover {
+  transform: translateY(-6px) scale(1.2);
+  color: white;
+}
+
+/* Tooltip */
+.contact-icons a::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color: white;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.contact-icons a:hover::after {
+  opacity: 1;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  text-align: center;
+  padding: 25px;
+  opacity: 0.6;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  nav {
+    display: none;
+  }
+
+  .profile-card {
+    flex-direction: column;
+    padding: 42px;
+    text-align: center;
+  }
+
+  .profile-image {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+  }
+
+  .profile-content {
+    margin-left: 0;
+  }
+
+  .profile-buttons,
+  .stats {
+    justify-content: center;
+  }
+
+  .section {
+    padding: 100px 6% 70px;
+  }
+}
