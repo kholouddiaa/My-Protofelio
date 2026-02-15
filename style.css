@@ -76,6 +76,10 @@ body::after {
 .logo span {
   color: #00f5d4;
 }
+.logo a {
+  text-decoration: none;
+  color: white;
+}
 
 /* Navbar links */
 .nav-links {
@@ -202,6 +206,14 @@ body::after {
 ========================= */
 .section {
   padding: 110px 10% 80px;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.show-section {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .section-title {
@@ -209,6 +221,15 @@ body::after {
   margin-bottom: 30px;
   color: #00f5d4;
   text-shadow: 0 0 12px rgba(0, 245, 212, 0.4);
+
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-title.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* =========================
@@ -284,6 +305,7 @@ body::after {
   gap: 34px;
   margin-top: 28px;
 }
+
 
 /* =========================
    ABOUT
